@@ -1,3 +1,3 @@
-# Car-Plate-Recognition-
+# Car Plate Recognition
 Final Project for CSE5524
 
