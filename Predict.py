@@ -11,7 +11,6 @@ import matplotlib.pyplot as plt
 import os
 import cv2
 import operator
-from sklearn.decomposition import PCA
 
 class KNN:
     
