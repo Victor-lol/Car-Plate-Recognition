@@ -89,10 +89,3 @@ class SegLetter:
         #             self.thresh[i,j] = 0
         # plt.imshow(self.gray,cmap='gray')
     
-
-if __name__ == '__main__':
-        
-    seg = SegLetter()
-    img = cv2.imread('plate18.png')
-    seg.preProcess(img)
-    seg.crop()
