@@ -74,27 +74,3 @@ class KNN:
         # preds = self.trainLabels[argmax]
         # return self.maps[preds[0][0]]
         
-
-if __name__ == '__main__':
-    
-    knn = KNN()
-    path = 'data/Training'
-    knn.loadData(path)
-    
-    lst = os.listdir('characters')
-    lst.sort()
-    prediction = []
-    for file in lst:
-        pth = 'characters/' + file
-        
-        if pth.endswith('.png'):
-            test = cv2.imread(pth)
-            test = cv2.cvtColor(test, cv2.COLOR_BGR2GRAY)
-            ret,test = cv2.threshold(test, 100, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
-            test = cv2.resize(test, (28,28), interpolation=cv2.INTER_NEAREST)
-            # pca = PCA(n_components=20)
-            # test = pca.fit_transform(test)
-            test = test.reshape(-1,1).T
-            predict = knn.predict(test, 15)
-            prediction.append(predict)
-    print(prediction)
